@@ -1,5 +1,5 @@
 import React from "react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 const Page = async ({
   params,
@@ -8,7 +8,8 @@ const Page = async ({
 }) => {
   const { productsId, reviewId } = await params;
   if (parseInt(reviewId) > 1000) {
-    notFound();
+    // notFound();
+    redirect("/products")
   }
   return (
     <h1>
