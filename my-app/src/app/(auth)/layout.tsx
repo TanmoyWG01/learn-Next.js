@@ -2,6 +2,7 @@
 
 import Link from "next/dist/client/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import "./styles.css";
 
 // export const metadata = {
@@ -20,9 +21,32 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [input, setInput] = useState("");
   const pathname = usePathname();
-  return (
-    // <html lang="en">
+  return (  
+    <div>
+      <div>
+        <input value={input} onChange={(e) => setInput(e.target.value)}/>
+      </div>
+      {navLinks.map((link) => {
+        const isActive = pathname === link.href || pathname.startsWith(link.href ) && link.href !== "/";
+        return (
+          <Link className={isActive ? "font-bold mr-4" : "text-blue-500 mr-4"}
+            href={link.href}
+            key={link.name}
+            // style={{ marginRight: "1rem" }}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
+      {children}
+    </div>
+  );
+}
+
+
+// <html lang="en">
     //   <body>
     //     <header
     //       style={{
@@ -43,20 +67,3 @@ export default function AuthLayout({
     //     </footer>
     //   </body>
     // </html>
-    <div>
-      {navLinks.map((link) => {
-        const isActive = pathname === link.href || pathname.startsWith(link.href ) && link.href !== "/";
-        return (
-          <Link className={isActive ? "font-bold mr-4" : "text-blue-500 mr-4"}
-            href={link.href}
-            key={link.name}
-            // style={{ marginRight: "1rem" }}
-          >
-            {link.name}
-          </Link>
-        );
-      })}
-      {children}
-    </div>
-  );
-}
