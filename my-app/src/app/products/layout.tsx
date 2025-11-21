@@ -11,23 +11,23 @@ export default function MarketingLayout({
   return (
     <html lang="en">
       <body>
-        <header
+        {/* <header
           style={{
             backgroundColor: "lightblue",
             padding: "1rem",
           }}
         >
           <p>Header</p>
-        </header>
+        </header> */}
         {children}
-        <footer
+        {/* <footer
           style={{
             backgroundColor: "ghostwhite",
             padding: "1rem",
           }}
         >
           <p>Footer</p>
-        </footer>
+        </footer> */}
       </body>
     </html>
   );
