@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import "./styles.css";
