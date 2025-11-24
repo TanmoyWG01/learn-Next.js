@@ -1,9 +1,9 @@
 import { Card } from "@/components/card";
 
-export default function RevenueMatrics(){
+export default function LoginSlot(){
     return (
         <Card>
-           Revenue Metrics Page
+           Please login to continue
         </Card>
     );
 }

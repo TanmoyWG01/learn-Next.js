@@ -1,9 +1,9 @@
 import { Card } from "@/components/card";
 
-export default function RevenueMatrics(){
+export default function RevenueMetricsDefault(){
     return (
         <Card>
-           Revenue Metrics Page
+           Revenue Metrics default content
         </Card>
     );
 }
